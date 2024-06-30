@@ -141,7 +141,11 @@ function createConfig(format, output, plugins = []) {
   if (isCJSBuild) {
     output.esModule = true
   }
-  output.sourcemap = !!process.env.SOURCE_MAP
+
+  // raw: output.sourcemap = !!process.env.SOURCE_MAP
+  // gengwenhao: 开启 sourcemap
+  output.sourcemap = true
+
   output.externalLiveBindings = false
   // https://github.com/rollup/rollup/pull/5380
   output.reexportProtoFromExternal = false
